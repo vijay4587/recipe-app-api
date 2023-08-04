@@ -14,7 +14,11 @@ jobs:
           username: ${ { secrets.DOCKERHUB_USER } }
           password: ${ { secrets.DOCKERHUB_TOKEN } }
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
       # - name: Save state
       #   run: echo "{name}={value}" >> $GITHUB_STATE
       # - name: Set output
