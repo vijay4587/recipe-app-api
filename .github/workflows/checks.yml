@@ -19,10 +19,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
-      # - name: Save state
-      #   run: echo "{name}={value}" >> $GITHUB_STATE
-      # - name: Set output
-      #   run: echo "{name}={value}" >> $GITHUB_OUTPUT
+      - name: Save state
+        run: echo "{name}={value}" >> $GITHUB_STATE
+      - name: Set output
+        run: echo "{name}={value}" >> $GITHUB_OUTPUT
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test"
       - name: Lint
