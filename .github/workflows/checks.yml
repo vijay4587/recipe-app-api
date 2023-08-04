@@ -15,10 +15,10 @@ jobs:
           password: ${ { secrets.DOCKERHUB_TOKEN } }
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Save state
-        run: echo "{name}={value}" >> $GITHUB_STATE
-      - name: Set output
-        run: echo "{name}={value}" >> $GITHUB_OUTPUT
+      # - name: Save state
+      #   run: echo "{name}={value}" >> $GITHUB_STATE
+      # - name: Set output
+      #   run: echo "{name}={value}" >> $GITHUB_OUTPUT
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test"
       - name: Lint
